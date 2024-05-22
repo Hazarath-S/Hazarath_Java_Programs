@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Lanching_Flipkart_Application 
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -14,6 +14,8 @@ public class Lanching_Flipkart_Application
 		System.out.println(Title);
 		driver.findElement(By.name("q")).sendKeys("Shoes Prices Low ");
 		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		driver.manage().window().minimize();
 	}
 
 }
